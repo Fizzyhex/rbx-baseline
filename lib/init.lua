@@ -7,7 +7,7 @@ local CollectionService = game:GetService("CollectionService")
 
 	The best friend of your initializer scripts.
 
-	```lua title="ExampleInit.lua"
+	```lua title="ExampleInit.server.lua"
 	local Baseline = require(somewhere.Packages.Baseline)
 	local ControllersFolder = somewhere.Controllers
 
