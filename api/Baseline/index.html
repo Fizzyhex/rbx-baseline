@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">Baseline | Baseline</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Fizzyhex.github.io/rbx-baseline/api/Baseline"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Baseline | Baseline"><meta data-rh="true" name="description" content="The best friend of your initializer scripts.
 
-```lua title=&quot;ExampleInit.lua&quot;
+```lua title=&quot;ExampleInit.server.lua&quot;
 local Baseline = require(somewhere.Packages.Baseline)
 local ControllersFolder = somewhere.Controllers
 
@@ -25,7 +25,7 @@ Baseline.SpawnMethods(controllers, &quot;OnStart&quot;)
 print(&quot;Loaded all controllers!&quot;, controllers)
 ```"><meta data-rh="true" property="og:description" content="The best friend of your initializer scripts.
 
-```lua title=&quot;ExampleInit.lua&quot;
+```lua title=&quot;ExampleInit.server.lua&quot;
 local Baseline = require(somewhere.Packages.Baseline)
 local ControllersFolder = somewhere.Controllers
 
@@ -44,8 +44,8 @@ Baseline.SpawnMethods(controllers, &quot;OnStart&quot;)
 -- Print the table of all our loaded controllers
 print(&quot;Loaded all controllers!&quot;, controllers)
 ```"><link data-rh="true" rel="canonical" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline"><link data-rh="true" rel="alternate" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline" hreflang="en"><link data-rh="true" rel="alternate" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline" hreflang="x-default"><link rel="stylesheet" href="/rbx-baseline/assets/css/styles.a5aeb1da.css">
-<link rel="preload" href="/rbx-baseline/assets/js/runtime~main.370644aa.js" as="script">
-<link rel="preload" href="/rbx-baseline/assets/js/main.32547d5d.js" as="script">
+<link rel="preload" href="/rbx-baseline/assets/js/runtime~main.a0165238.js" as="script">
+<link rel="preload" href="/rbx-baseline/assets/js/main.d84011ad.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -438,13 +438,13 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
     &quot;properties&quot;: [],
     &quot;types&quot;: [],
     &quot;name&quot;: &quot;Baseline&quot;,
-    &quot;desc&quot;: &quot;The best friend of your initializer scripts.\n\n```lua title=\&quot;ExampleInit.lua\&quot;\nlocal Baseline = require(somewhere.Packages.Baseline)\nlocal ControllersFolder = somewhere.Controllers\n\nlocal moduleScriptFilter = Baseline.Filters.IsA(\&quot;ModuleScript\&quot;)\n\n-- Let&#x27;s require any descendants that are a ModuleScript\nlocal controllers = Baseline.CallFor(\n\tBaseline.Filter(ControllersFolder:GetDescendants(), moduleScriptFilter),\n\trequire\n)\n\n-- Do controller:OnInit() for any controller that has an &#x27;OnInit&#x27; method\nBaseline.CallMethods(controllers, \&quot;OnInit\&quot;)\n-- Do task.spawn(controller:OnStart()) for any controller that has an &#x27;OnStart&#x27; method\nBaseline.SpawnMethods(controllers, \&quot;OnStart\&quot;)\n-- Print the table of all our loaded controllers\nprint(\&quot;Loaded all controllers!\&quot;, controllers)\n```&quot;,
+    &quot;desc&quot;: &quot;The best friend of your initializer scripts.\n\n```lua title=\&quot;ExampleInit.server.lua\&quot;\nlocal Baseline = require(somewhere.Packages.Baseline)\nlocal ControllersFolder = somewhere.Controllers\n\nlocal moduleScriptFilter = Baseline.Filters.IsA(\&quot;ModuleScript\&quot;)\n\n-- Let&#x27;s require any descendants that are a ModuleScript\nlocal controllers = Baseline.CallFor(\n\tBaseline.Filter(ControllersFolder:GetDescendants(), moduleScriptFilter),\n\trequire\n)\n\n-- Do controller:OnInit() for any controller that has an &#x27;OnInit&#x27; method\nBaseline.CallMethods(controllers, \&quot;OnInit\&quot;)\n-- Do task.spawn(controller:OnStart()) for any controller that has an &#x27;OnStart&#x27; method\nBaseline.SpawnMethods(controllers, \&quot;OnStart\&quot;)\n-- Print the table of all our loaded controllers\nprint(\&quot;Loaded all controllers!\&quot;, controllers)\n```&quot;,
     &quot;source&quot;: {
         &quot;line&quot;: 30,
         &quot;path&quot;: &quot;lib/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#CallFor" class="table-of-contents__link toc-highlight">.CallFor</a></li><li><a href="#CallForItems" class="table-of-contents__link toc-highlight">.CallForItems</a></li><li><a href="#CallForKeys" class="table-of-contents__link toc-highlight">.CallForKeys</a></li><li><a href="#CallForValues" class="table-of-contents__link toc-highlight">.CallForValues</a></li><li><a href="#CallMethods" class="table-of-contents__link toc-highlight">.CallMethods</a></li><li><a href="#CombineFilters" class="table-of-contents__link toc-highlight">.CombineFilters</a></li><li><a href="#Extend" class="table-of-contents__link toc-highlight">.Extend</a></li><li><a href="#Filter" class="table-of-contents__link toc-highlight">.Filter</a></li><li><a href="#InvertFilter" class="table-of-contents__link toc-highlight">.InvertFilter</a></li><li><a href="#SpawnMethods" class="table-of-contents__link toc-highlight">.SpawnMethods</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Fizzyhex. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/rbx-baseline/assets/js/runtime~main.370644aa.js"></script>
-<script src="/rbx-baseline/assets/js/main.32547d5d.js"></script>
+<script src="/rbx-baseline/assets/js/runtime~main.a0165238.js"></script>
+<script src="/rbx-baseline/assets/js/main.d84011ad.js"></script>
 </body>
 </html>
