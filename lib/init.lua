@@ -264,6 +264,15 @@ end
 --[=[
 	Calls a method on all items in a table, only if the method is present.
 
+	```lua
+	local moduleContainer = Somewhere.Modules:GetChildren()
+	Baseline.CallMethods(moduleContainer, "ClearAllChildren")
+
+	local maids = {Maid.new(), {}, Maid.new()}
+	-- Calls :Clean() on all of the maids, ignoring the empty table
+	Baseline.CallMethods(maids, "Clean")
+	```
+
 	@param tabl {} -- Table to iterate over
 	@param methodName string -- Name of the method to call
 	@param ... ...any -- Additional arguments to insert after value & key in the function call
