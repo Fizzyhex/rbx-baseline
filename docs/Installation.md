@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+title: "Installation"
+---
+
 ## Installation
 
 The latest version of this package is available on [Wally](https://wally.run/package/fizzyhex/baseline), a package manager built for Roblox. To use Baseline, you need to run `wally init` on your project directory and then add it to your project as a dependancy. Here's what your `wally.toml` file could look like:
