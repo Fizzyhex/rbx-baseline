@@ -4,7 +4,7 @@ changelog = true
 
 [home]
 enabled = true
-includeReadme = true
+includeReadme = false
 
 [docusaurus]
 tagline = "The best friend of your initializer scripts."
