@@ -5,7 +5,7 @@ sidebar_position: 1
 # Introduction
 
 :::caution Under Construction
-This documentation is up-to-date, but still a work in progress.
+This documentation contains up-to-date information, but still a work in progress.
 :::
 
 Baseline is a functional library for Roblox that contains a utilities for creating cleaner initalization scripts. It's a great tool for client/server scripts for experiences using SSA (single-script architecture), but it's very general purpose and may be appropriate for other applications.
