@@ -44,8 +44,8 @@ Baseline.SpawnMethods(controllers, &quot;OnStart&quot;)
 -- Print the table of all our loaded controllers
 print(&quot;Loaded all controllers!&quot;, controllers)
 ```"><link data-rh="true" rel="canonical" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline"><link data-rh="true" rel="alternate" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline" hreflang="en"><link data-rh="true" rel="alternate" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline" hreflang="x-default"><link rel="stylesheet" href="/rbx-baseline/assets/css/styles.a5aeb1da.css">
-<link rel="preload" href="/rbx-baseline/assets/js/runtime~main.0868a955.js" as="script">
-<link rel="preload" href="/rbx-baseline/assets/js/main.c8b17b2a.js" as="script">
+<link rel="preload" href="/rbx-baseline/assets/js/runtime~main.2969f3e4.js" as="script">
+<link rel="preload" href="/rbx-baseline/assets/js/main.0b172896.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -147,7 +147,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
 <p>A table containing anything returned by your function</p>
 </span></span></div><div>
 <p>Runs a function for every value in a table. Similar to <code>table.foreach</code>.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallMethods"><code style="text-decoration:none">CallMethods</code><a href="#CallMethods" class="hash-link" aria-label="Direct link to CallMethods" title="Direct link to CallMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L272"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallMethods"><code style="text-decoration:none">CallMethods</code><a href="#CallMethods" class="hash-link" aria-label="Direct link to CallMethods" title="Direct link to CallMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L281"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>methodName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Name of the method to call</p>
@@ -157,7 +157,14 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
 <p>A table containing anything returned by the method calls</p>
 </span></span></div><div>
 <p>Calls a method on all items in a table, only if the method is present.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SpawnMethods"><code style="text-decoration:none">SpawnMethods</code><a href="#SpawnMethods" class="hash-link" aria-label="Direct link to SpawnMethods" title="Direct link to SpawnMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L296"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">SpawnMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> moduleContainer <span class="token operator">=</span> Somewhere<span class="token punctuation">.</span>Modules<span class="token punctuation">:</span><span class="token function">GetChildren</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+Baseline<span class="token punctuation">.</span><span class="token function">CallMethods</span><span class="token punctuation">(</span>moduleContainer<span class="token punctuation">,</span> <span class="token string">"ClearAllChildren"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">local</span> maids <span class="token operator">=</span> <span class="token punctuation">{</span>Maid<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> Maid<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token comment">-- Calls :Clean() on all of the maids, ignoring the empty table</span>
+Baseline<span class="token punctuation">.</span><span class="token function">CallMethods</span><span class="token punctuation">(</span>maids<span class="token punctuation">,</span> <span class="token string">"Clean"</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SpawnMethods"><code style="text-decoration:none">SpawnMethods</code><a href="#SpawnMethods" class="hash-link" aria-label="Direct link to SpawnMethods" title="Direct link to SpawnMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L305"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">SpawnMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>methodName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Name of the method to call</p>
@@ -165,7 +172,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
 <p>Additional arguments to insert after value &#x26; key in the function call</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Similar to <code>CallMethods</code> but method calls willbe wrapped in <code>task.spawn</code> too.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Extend"><code style="text-decoration:none">Extend</code><a href="#Extend" class="hash-link" aria-label="Direct link to Extend" title="Direct link to Extend">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L327"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">Extend</code><code>(</code><code>...<!-- -->: </code><code class="blue_P4bS">...</code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">any</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>) → </code><code class="blue_P4bS">results</code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Extend"><code style="text-decoration:none">Extend</code><a href="#Extend" class="hash-link" aria-label="Direct link to Extend" title="Direct link to Extend">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L336"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">Extend</code><code>(</code><code>...<!-- -->: </code><code class="blue_P4bS">...</code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">any</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>) → </code><code class="blue_P4bS">results</code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code></div><div>
 <p>Combines multiple arrays.</p>
 <div class="admonition admonition-info alert alert--info">
   <div class="admonition-heading">
@@ -392,7 +399,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
         },
         {
             &quot;name&quot;: &quot;CallMethods&quot;,
-            &quot;desc&quot;: &quot;Calls a method on all items in a table, only if the method is present.&quot;,
+            &quot;desc&quot;: &quot;Calls a method on all items in a table, only if the method is present.\n\n```lua\nlocal moduleContainer = Somewhere.Modules:GetChildren()\nBaseline.CallMethods(moduleContainer, \&quot;ClearAllChildren\&quot;)\n\nlocal maids = {Maid.new(), {}, Maid.new()}\n-- Calls :Clean() on all of the maids, ignoring the empty table\nBaseline.CallMethods(maids, \&quot;Clean\&quot;)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;tabl&quot;,
@@ -418,7 +425,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 272,
+                &quot;line&quot;: 281,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
@@ -445,7 +452,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 296,
+                &quot;line&quot;: 305,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
@@ -467,7 +474,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 327,
+                &quot;line&quot;: 336,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         }
@@ -481,7 +488,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Cal
         &quot;path&quot;: &quot;lib/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#CallFor" class="table-of-contents__link toc-highlight">.CallFor</a></li><li><a href="#CallForItems" class="table-of-contents__link toc-highlight">.CallForItems</a></li><li><a href="#CallForKeys" class="table-of-contents__link toc-highlight">.CallForKeys</a></li><li><a href="#CallForValues" class="table-of-contents__link toc-highlight">.CallForValues</a></li><li><a href="#CallMethods" class="table-of-contents__link toc-highlight">.CallMethods</a></li><li><a href="#CombineFilters" class="table-of-contents__link toc-highlight">.CombineFilters</a></li><li><a href="#Extend" class="table-of-contents__link toc-highlight">.Extend</a></li><li><a href="#Filter" class="table-of-contents__link toc-highlight">.Filter</a></li><li><a href="#InvertFilter" class="table-of-contents__link toc-highlight">.InvertFilter</a></li><li><a href="#SpawnMethods" class="table-of-contents__link toc-highlight">.SpawnMethods</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Fizzyhex. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/rbx-baseline/assets/js/runtime~main.0868a955.js"></script>
-<script src="/rbx-baseline/assets/js/main.c8b17b2a.js"></script>
+<script src="/rbx-baseline/assets/js/runtime~main.2969f3e4.js"></script>
+<script src="/rbx-baseline/assets/js/main.0b172896.js"></script>
 </body>
 </html>
