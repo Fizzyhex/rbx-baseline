@@ -1,0 +1,5 @@
+title = "Baseline"
+gitSourceBranch = "main"
+
+[docusaurus]
+tagline = "The best friend of your initalizer scripts."
