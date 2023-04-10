@@ -1,5 +1,10 @@
 title = "Baseline"
 gitSourceBranch = "main"
+changelog = true
+
+[home]
+enabled = true
+includeReadme = true
 
 [docusaurus]
 tagline = "The best friend of your initalizer scripts."
