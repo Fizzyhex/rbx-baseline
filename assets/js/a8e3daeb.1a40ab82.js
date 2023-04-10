@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[352],{63891:e=>{e.exports=JSON.parse('{"sourceUrl":"https://github.com/Fizzyhex/rbx-baseline/blob/main","baseUrl":"/rbx-baseline/","classOrder":[],"apiCategories":[]}')}}]);
