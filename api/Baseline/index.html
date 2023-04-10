@@ -44,8 +44,8 @@ Baseline.SpawnMethods(controllers, &quot;OnStart&quot;)
 -- Print the table of all our loaded controllers
 print(&quot;Loaded all controllers!&quot;, controllers)
 ```"><link data-rh="true" rel="canonical" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline"><link data-rh="true" rel="alternate" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline" hreflang="en"><link data-rh="true" rel="alternate" href="https://Fizzyhex.github.io/rbx-baseline/api/Baseline" hreflang="x-default"><link rel="stylesheet" href="/rbx-baseline/assets/css/styles.a5aeb1da.css">
-<link rel="preload" href="/rbx-baseline/assets/js/runtime~main.76fb6ccc.js" as="script">
-<link rel="preload" href="/rbx-baseline/assets/js/main.6c2561d6.js" as="script">
+<link rel="preload" href="/rbx-baseline/assets/js/runtime~main.0868a955.js" as="script">
+<link rel="preload" href="/rbx-baseline/assets/js/main.c8b17b2a.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -73,11 +73,16 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
 <p>Filters to combine</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">Filter</code></div><div>
 <p>Combines multiple filters together to create one.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="InvertFilter"><code style="text-decoration:none">InvertFilter</code><a href="#InvertFilter" class="hash-link" aria-label="Direct link to InvertFilter" title="Direct link to InvertFilter">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L111"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">InvertFilter</code><code>(</code><div class="inset_uKQm"><div><code>filter<!-- -->: </code><code class="blue_P4bS">Filter</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="InvertFilter"><code style="text-decoration:none">InvertFilter</code><a href="#InvertFilter" class="hash-link" aria-label="Direct link to InvertFilter" title="Direct link to InvertFilter">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L118"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">InvertFilter</code><code>(</code><div class="inset_uKQm"><div><code>filter<!-- -->: </code><code class="blue_P4bS">Filter</code><span class="inlineDescription_G7Er">-- <span>
 <p>Filter to invert</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">Filter</code></div><div>
 <p>Wraps a filter and makes it return the opposite of what it would before.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Filter"><code style="text-decoration:none">Filter</code><a href="#Filter" class="hash-link" aria-label="Direct link to Filter" title="Direct link to Filter">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L125"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">Filter</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> enabledFilter <span class="token operator">=</span> Baseline<span class="token punctuation">.</span><span class="token function">InvertFilter</span><span class="token punctuation">(</span>Baseline<span class="token punctuation">.</span>Filters<span class="token punctuation">.</span><span class="token function">HasTag</span><span class="token punctuation">(</span><span class="token string">"Disabled"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">local</span> children <span class="token operator">=</span> ReplicatedStorage<span class="token punctuation">.</span>Shared<span class="token punctuation">.</span>Systems<span class="token punctuation">:</span><span class="token function">GetChildren</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+Baseline<span class="token punctuation">.</span><span class="token function">Filter</span><span class="token punctuation">(</span>children<span class="token punctuation">,</span> enabledFilter<span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Filter"><code style="text-decoration:none">Filter</code><a href="#Filter" class="hash-link" aria-label="Direct link to Filter" title="Direct link to Filter">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L149"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">Filter</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to filter</p>
 </span></span></div><div><code>filter<!-- -->: </code><code class="blue_P4bS">Filter</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Filter to run</p>
@@ -85,7 +90,22 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
 <p>Additional filters to run</p>
 </span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code></div><div>
 <p>Iterates over a table and returns a table of content only accepted by the filter(s).</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallForKeys"><code style="text-decoration:none">CallForKeys</code><a href="#CallForKeys" class="hash-link" aria-label="Direct link to CallForKeys" title="Direct link to CallForKeys">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L164"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallForKeys</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">SystemFilter</span><span class="token punctuation">(</span>instance<span class="token punctuation">:</span> Instance<span class="token punctuation">)</span>
+	<span class="token comment">-- The name must end in 'System'</span>
+	<span class="token keyword">return</span> instance<span class="token punctuation">.</span>Name<span class="token punctuation">:</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">"System$"</span><span class="token punctuation">)</span> <span class="token operator">~=</span> <span class="token keyword">nil</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">local</span> children <span class="token operator">=</span> <span class="token punctuation">{</span>
+	Systems<span class="token punctuation">.</span>UnrelatedModule<span class="token punctuation">,</span>
+	Systems<span class="token punctuation">.</span>RopeSystem<span class="token punctuation">,</span>
+	Systems<span class="token punctuation">.</span>DodBetter<span class="token punctuation">,</span>
+	Systems<span class="token punctuation">.</span>GameSystem
+<span class="token punctuation">}</span>
+
+<span class="token comment">-- Output: { RopeSystem, GameSystem }</span>
+<span class="token function">print</span><span class="token punctuation">(</span>Baseline<span class="token punctuation">.</span><span class="token function">Filter</span><span class="token punctuation">(</span>children<span class="token punctuation">,</span> SystemFilter<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallForKeys"><code style="text-decoration:none">CallForKeys</code><a href="#CallForKeys" class="hash-link" aria-label="Direct link to CallForKeys" title="Direct link to CallForKeys">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L188"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallForKeys</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>func<!-- -->: </code><code class="blue_P4bS">function</code><code>,</code></div><div><code>...<!-- -->: </code><code class="blue_P4bS">...any</code><span class="inlineDescription_G7Er">-- <span>
 <p>Additional arguments to insert after key in the function call</p>
@@ -93,7 +113,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
 <p>A table containing anything returned by your function</p>
 </span></span></div><div>
 <p>Runs a function for every key in a table.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallForValues"><code style="text-decoration:none">CallForValues</code><a href="#CallForValues" class="hash-link" aria-label="Direct link to CallForValues" title="Direct link to CallForValues">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L183"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallForValues</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallForValues"><code style="text-decoration:none">CallForValues</code><a href="#CallForValues" class="hash-link" aria-label="Direct link to CallForValues" title="Direct link to CallForValues">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L219"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallForValues</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>func<!-- -->: </code><code class="blue_P4bS">function</code><code>,</code></div><div><code>...<!-- -->: </code><code class="blue_P4bS">...any</code><span class="inlineDescription_G7Er">-- <span>
 <p>Additional arguments to insert after value in the function call</p>
@@ -101,7 +121,17 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
 <p>A table containing anything returned by your function</p>
 </span></span></div><div>
 <p>Runs a function for every value in a table.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallFor"><code style="text-decoration:none">CallFor</code><a href="#CallFor" class="hash-link" aria-label="Direct link to CallFor" title="Direct link to CallFor">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L202"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallFor</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> zombies <span class="token operator">=</span> <span class="token punctuation">{</span>
+	ZombiePrefabs<span class="token punctuation">.</span>SlowZombie<span class="token punctuation">,</span>
+	ZombiePrefabs<span class="token punctuation">.</span>MoneyZombie
+<span class="token punctuation">}</span>
+
+<span class="token comment">-- Output:</span>
+<span class="token comment">-- SlowZombie is a zombie!</span>
+<span class="token comment">-- MoneyZombie is a zombie!</span>
+Baseline<span class="token punctuation">.</span><span class="token function">CallForValues</span><span class="token punctuation">(</span>zombies<span class="token punctuation">,</span> print<span class="token punctuation">,</span> <span class="token string">"is a zombie!"</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallFor"><code style="text-decoration:none">CallFor</code><a href="#CallFor" class="hash-link" aria-label="Direct link to CallFor" title="Direct link to CallFor">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L238"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallFor</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>func<!-- -->: </code><code class="blue_P4bS">function</code><code>,</code></div><div><code>...<!-- -->: </code><code class="blue_P4bS">...any</code><span class="inlineDescription_G7Er">-- <span>
 <p>Additional arguments to insert after value in the function call</p>
@@ -109,15 +139,15 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
 <p>A table containing anything returned by your function</p>
 </span></span></div><div>
 <p>Alias for CallForValues.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallForItems"><code style="text-decoration:none">CallForItems</code><a href="#CallForItems" class="hash-link" aria-label="Direct link to CallForItems" title="Direct link to CallForItems">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L214"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallForItems</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallForItems"><code style="text-decoration:none">CallForItems</code><a href="#CallForItems" class="hash-link" aria-label="Direct link to CallForItems" title="Direct link to CallForItems">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L250"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallForItems</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>func<!-- -->: </code><code class="blue_P4bS">function</code><code>,</code></div><div><code>...<!-- -->: </code><code class="blue_P4bS">...any</code><span class="inlineDescription_G7Er">-- <span>
 <p>Additional arguments to insert after value &#x26; key in the function call</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">results</code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
 <p>A table containing anything returned by your function</p>
 </span></span></div><div>
-<p>Runs a function for every value in a table.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallMethods"><code style="text-decoration:none">CallMethods</code><a href="#CallMethods" class="hash-link" aria-label="Direct link to CallMethods" title="Direct link to CallMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L236"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Runs a function for every value in a table. Similar to <code>table.foreach</code>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CallMethods"><code style="text-decoration:none">CallMethods</code><a href="#CallMethods" class="hash-link" aria-label="Direct link to CallMethods" title="Direct link to CallMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L272"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">CallMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>methodName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Name of the method to call</p>
@@ -127,7 +157,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
 <p>A table containing anything returned by the method calls</p>
 </span></span></div><div>
 <p>Calls a method on all items in a table, only if the method is present.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SpawnMethods"><code style="text-decoration:none">SpawnMethods</code><a href="#SpawnMethods" class="hash-link" aria-label="Direct link to SpawnMethods" title="Direct link to SpawnMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L260"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">SpawnMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SpawnMethods"><code style="text-decoration:none">SpawnMethods</code><a href="#SpawnMethods" class="hash-link" aria-label="Direct link to SpawnMethods" title="Direct link to SpawnMethods">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L296"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">SpawnMethods</code><code>(</code><div class="inset_uKQm"><div><code>tabl<!-- -->: </code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Table to iterate over</p>
 </span></span></div><div><code>methodName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Name of the method to call</p>
@@ -135,7 +165,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
 <p>Additional arguments to insert after value &#x26; key in the function call</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Similar to <code>CallMethods</code> but method calls willbe wrapped in <code>task.spawn</code> too.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Extend"><code style="text-decoration:none">Extend</code><a href="#Extend" class="hash-link" aria-label="Direct link to Extend" title="Direct link to Extend">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L282"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">Extend</code><code>(</code><code>...<!-- -->: </code><code class="blue_P4bS">...</code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">any</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>) → </code><code class="blue_P4bS">results</code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Extend"><code style="text-decoration:none">Extend</code><a href="#Extend" class="hash-link" aria-label="Direct link to Extend" title="Direct link to Extend">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Fizzyhex/rbx-baseline/blob/main/lib/init.lua#L327"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Baseline<!-- -->.</code><code class="green_DgR4">Extend</code><code>(</code><code>...<!-- -->: </code><code class="blue_P4bS">...</code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">any</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>) → </code><code class="blue_P4bS">results</code><code class="purple_ieR2">{</code><code class="purple_ieR2">}</code></div><div>
 <p>Combines multiple arrays.</p>
 <div class="admonition admonition-info alert alert--info">
   <div class="admonition-heading">
@@ -147,6 +177,13 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
     <p>This function does not mutate your tables, and instead returns a new table with your arrays combined.</p>
   </div>
 </div>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> t1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> t2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> t3 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"e"</span><span class="token punctuation">,</span> <span class="token string">"f"</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> composition <span class="token operator">=</span> Baseline<span class="token punctuation">.</span><span class="token function">Extend</span><span class="token punctuation">(</span>t1<span class="token punctuation">,</span> t2<span class="token punctuation">,</span> t3<span class="token punctuation">)</span>
+<span class="token comment">-- Output: { "a", "b", "c", "d", "e", "f" }</span>
+<span class="token function">print</span><span class="token punctuation">(</span>composition<span class="token punctuation">)</span>
+</code></pre>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
         {
@@ -173,7 +210,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
         },
         {
             &quot;name&quot;: &quot;InvertFilter&quot;,
-            &quot;desc&quot;: &quot;Wraps a filter and makes it return the opposite of what it would before.&quot;,
+            &quot;desc&quot;: &quot;Wraps a filter and makes it return the opposite of what it would before.\n\n```lua\nlocal enabledFilter = Baseline.InvertFilter(Baseline.Filters.HasTag(\&quot;Disabled\&quot;))\n\nlocal children = ReplicatedStorage.Shared.Systems:GetChildren()\nBaseline.Filter(children, enabledFilter)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;filter&quot;,
@@ -189,13 +226,13 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 111,
+                &quot;line&quot;: 118,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
         {
             &quot;name&quot;: &quot;Filter&quot;,
-            &quot;desc&quot;: &quot;Iterates over a table and returns a table of content only accepted by the filter(s).&quot;,
+            &quot;desc&quot;: &quot;Iterates over a table and returns a table of content only accepted by the filter(s).\n\n```lua\nlocal function SystemFilter(instance: Instance)\n\t-- The name must end in &#x27;System&#x27;\n\treturn instance.Name:match(\&quot;System$\&quot;) ~= nil\nend\n\nlocal children = {\n\tSystems.UnrelatedModule,\n\tSystems.RopeSystem,\n\tSystems.DodBetter,\n\tSystems.GameSystem\n}\n\n-- Output: { RopeSystem, GameSystem }\nprint(Baseline.Filter(children, SystemFilter))\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;tabl&quot;,
@@ -221,7 +258,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 125,
+                &quot;line&quot;: 149,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
@@ -253,13 +290,13 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 164,
+                &quot;line&quot;: 188,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
         {
             &quot;name&quot;: &quot;CallForValues&quot;,
-            &quot;desc&quot;: &quot;Runs a function for every value in a table.&quot;,
+            &quot;desc&quot;: &quot;Runs a function for every value in a table.\n\n```lua\nlocal zombies = {\n\tZombiePrefabs.SlowZombie,\n\tZombiePrefabs.MoneyZombie\n}\n\n-- Output:\n-- SlowZombie is a zombie!\n-- MoneyZombie is a zombie!\nBaseline.CallForValues(zombies, print, \&quot;is a zombie!\&quot;)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;tabl&quot;,
@@ -285,7 +322,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 183,
+                &quot;line&quot;: 219,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
@@ -317,13 +354,13 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 202,
+                &quot;line&quot;: 238,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
         {
             &quot;name&quot;: &quot;CallForItems&quot;,
-            &quot;desc&quot;: &quot;Runs a function for every value in a table.&quot;,
+            &quot;desc&quot;: &quot;Runs a function for every value in a table. Similar to `table.foreach`.&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;tabl&quot;,
@@ -349,7 +386,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 214,
+                &quot;line&quot;: 250,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
@@ -381,7 +418,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 236,
+                &quot;line&quot;: 272,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
@@ -408,13 +445,13 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 260,
+                &quot;line&quot;: 296,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         },
         {
             &quot;name&quot;: &quot;Extend&quot;,
-            &quot;desc&quot;: &quot;Combines multiple arrays.\n\n:::info\nThis function does not mutate your tables, and instead returns a new table with your arrays combined.\n:::&quot;,
+            &quot;desc&quot;: &quot;Combines multiple arrays.\n\n:::info\nThis function does not mutate your tables, and instead returns a new table with your arrays combined.\n:::\n\n```lua\nlocal t1 = {\&quot;a\&quot;, \&quot;b\&quot;}\nlocal t2 = {\&quot;c\&quot;, \&quot;d\&quot;}\nlocal t3 = {\&quot;e\&quot;, \&quot;f\&quot;}\nlocal composition = Baseline.Extend(t1, t2, t3)\n-- Output: { \&quot;a\&quot;, \&quot;b\&quot;, \&quot;c\&quot;, \&quot;d\&quot;, \&quot;e\&quot;, \&quot;f\&quot; }\nprint(composition)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;...&quot;,
@@ -430,7 +467,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 282,
+                &quot;line&quot;: 327,
                 &quot;path&quot;: &quot;lib/init.lua&quot;
             }
         }
@@ -444,7 +481,7 @@ Baseline<span class="token punctuation">.</span><span class="token function">Spa
         &quot;path&quot;: &quot;lib/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#CallFor" class="table-of-contents__link toc-highlight">.CallFor</a></li><li><a href="#CallForItems" class="table-of-contents__link toc-highlight">.CallForItems</a></li><li><a href="#CallForKeys" class="table-of-contents__link toc-highlight">.CallForKeys</a></li><li><a href="#CallForValues" class="table-of-contents__link toc-highlight">.CallForValues</a></li><li><a href="#CallMethods" class="table-of-contents__link toc-highlight">.CallMethods</a></li><li><a href="#CombineFilters" class="table-of-contents__link toc-highlight">.CombineFilters</a></li><li><a href="#Extend" class="table-of-contents__link toc-highlight">.Extend</a></li><li><a href="#Filter" class="table-of-contents__link toc-highlight">.Filter</a></li><li><a href="#InvertFilter" class="table-of-contents__link toc-highlight">.InvertFilter</a></li><li><a href="#SpawnMethods" class="table-of-contents__link toc-highlight">.SpawnMethods</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Fizzyhex. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/rbx-baseline/assets/js/runtime~main.76fb6ccc.js"></script>
-<script src="/rbx-baseline/assets/js/main.6c2561d6.js"></script>
+<script src="/rbx-baseline/assets/js/runtime~main.0868a955.js"></script>
+<script src="/rbx-baseline/assets/js/main.c8b17b2a.js"></script>
 </body>
 </html>
