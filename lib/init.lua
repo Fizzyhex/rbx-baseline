@@ -105,6 +105,13 @@ end
 --[=[
 	Wraps a filter and makes it return the opposite of what it would before.
 
+	```lua
+	local enabledFilter = Baseline.InvertFilter(Baseline.Filters.HasTag("Disabled"))
+
+	local children = ReplicatedStorage.Shared.Systems:GetChildren()
+	Baseline.Filter(children, enabledFilter)
+	```
+
 	@param filter Filter -- Filter to invert
 	@return Filter
 ]=]
@@ -116,6 +123,23 @@ end
 
 --[=[
 	Iterates over a table and returns a table of content only accepted by the filter(s).
+
+	```lua
+	local function SystemFilter(instance: Instance)
+		-- The name must end in 'System'
+		return instance.Name:match("System$") ~= nil
+	end
+
+	local children = {
+		Systems.UnrelatedModule,
+		Systems.RopeSystem,
+		Systems.DodBetter,
+		Systems.GameSystem
+	}
+
+	-- Output: { RopeSystem, GameSystem }
+	print(Baseline.Filter(children, SystemFilter))
+	```
 
 	@param tabl {} -- Table to filter
 	@param filter Filter -- Filter to run
@@ -175,6 +199,18 @@ end
 --[=[
 	Runs a function for every value in a table.
 
+	```lua
+	local zombies = {
+		ZombiePrefabs.SlowZombie,
+		ZombiePrefabs.MoneyZombie
+	}
+
+	-- Output:
+	-- SlowZombie is a zombie!
+	-- MoneyZombie is a zombie!
+	Baseline.CallForValues(zombies, print, "is a zombie!")
+	```
+
 	@param tabl {} -- Table to iterate over
 	@param func function
 	@param ... ...any -- Additional arguments to insert after value in the function call
@@ -204,7 +240,7 @@ function Baseline.CallFor(tabl, func, ...)
 end
 
 --[=[
-	Runs a function for every value in a table.
+	Runs a function for every value in a table. Similar to `table.foreach`.
 
 	@param tabl {} -- Table to iterate over
 	@param func function
@@ -275,6 +311,15 @@ end
 	:::info
 	This function does not mutate your tables, and instead returns a new table with your arrays combined.
 	:::
+
+	```lua
+	local t1 = {"a", "b"}
+	local t2 = {"c", "d"}
+	local t3 = {"e", "f"}
+	local composition = Baseline.Extend(t1, t2, t3)
+	-- Output: { "a", "b", "c", "d", "e", "f" }
+	print(composition)
+	```
 
 	@param ... ...{[any]: any}
 	@return results {}
