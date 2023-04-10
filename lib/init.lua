@@ -1,11 +1,11 @@
+export type Filter = (value: any, key: any?) -> (boolean)
+
 local CollectionService = game:GetService("CollectionService")
 
 --[=[
 	@class Baseline
 
-	The best friend of your initalizer scripts.
-
-	Baseline is a functional library for Roblox that contains a few utilities for creating cleaner initalization scripts.
+	The best friend of your initializer scripts.
 
 	```lua title="ExampleInit.lua"
 	local Baseline = require(somewhere.Packages.Baseline)
@@ -28,12 +28,6 @@ local CollectionService = game:GetService("CollectionService")
 	```
 ]=]
 local Baseline = {}
-
---[=[
-	@within Baseline
-	@interface Filter
-]=]
-export type Filter = (value: any, key: any?) -> (boolean)
 
 Baseline.Filters = {
 	--[=[

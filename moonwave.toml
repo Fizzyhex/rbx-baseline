@@ -7,4 +7,4 @@ enabled = true
 includeReadme = true
 
 [docusaurus]
-tagline = "The best friend of your initalizer scripts."
+tagline = "The best friend of your initializer scripts."
