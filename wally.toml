@@ -1,6 +1,6 @@
 [package]
 name = "fizzyhex/baseline"
-version = "0.2.1"
+version = "0.2.2"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 description = "The best friend of your initializer scripts."
