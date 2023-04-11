@@ -48,7 +48,7 @@ print(Baseline.Filter({19, 20, 21, 22, 23}, isOverTwenty))
 
 ### Roblox Instance Filters
 
-Baseline comes with a bunch of useful filters for Roblox Instances by default. Check the API docs if you're interested in learning about all of those.
+Baseline comes with a bunch of useful decorators that create filters for Roblox Instances by default. Check the API docs if you're interested in learning about all of those.
 
 ```lua
 local ZombiesContainer = ServerStorage.Zombies:GetChildren()
