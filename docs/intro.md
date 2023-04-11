@@ -8,7 +8,7 @@ sidebar_position: 1
 This documentation contains up-to-date information, but still a work in progress.
 :::
 
-Baseline is a functional library for Roblox that contains a utilities for creating cleaner initalization scripts. It's a great tool for client/server scripts for experiences using SSA (single-script architecture), but it's very general purpose and may be appropriate for other applications.
+Baseline is a functional library for Roblox that contains utilities for creating cleaner initalization scripts. It's a great tool for client/server scripts for experiences using SSA (single-script architecture), but it's very general purpose and may be appropriate for other applications.
 
 If you're interested, feel free to take a look at the API docs and concepts page for more info!
 
