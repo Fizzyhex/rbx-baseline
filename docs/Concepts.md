@@ -25,7 +25,7 @@ local filteredNumbers = Baseline.Filter({3, 5, 6, 7, 8}, IsOverFive)
 print(filteredNumbers)
 ```
 
-### Making more reusable filters
+### Making More Reusable Filters
 
 Here's where the decorator pattern comes in to play. Say we want to take the above `IsOverFive` filter, and make it work with a broader range of numbers. We can achieve this using a decorator:
 
@@ -48,7 +48,7 @@ print(Baseline.Filter({19, 20, 21, 22, 23}, isOverTwenty))
 
 ### Roblox Instance Filters
 
-Baseline comes with a bunch of useful decorators that create filters for Roblox Instances by default. Check the API docs if you're interested in learning about all of those.
+Baseline comes with a bunch of useful decorators that create filters for Roblox Instances. Check the API docs if you're interested in learning about all of those.
 
 ```lua
 local ZombiesContainer = ServerStorage.Zombies:GetChildren()
